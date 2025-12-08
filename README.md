@@ -1,34 +1,82 @@
 # BTKD
 
-# Environment
-## Our environment is: python==3.9, numpy==1.21.0, pytorch==1.9.0, cuda==11.3, cudnn==8.0, opencv-python==4.1.2.30, matplotlib==3.4.3. These are all basic libraries.
-## To run the YOLO models, you need to install the `ultralytics` library.
-## To run the MiT segmentation models, you need to install the `timm` library.
-## Both Ubuntu and Windows are supported; only the file path formats are different.
-## Download the classification pretrained weights and place them in the `pth` folder under the project root directory.
-## Download the segmentation pretrained weights and trained weights, and place them in the `segment/pth` folder.
-## My GPU setup is 2 × RTX 4090.
+This repository provides the official implementation of **BTKD**, a knowledge distillation framework for image classification, object detection, and semantic segmentation.
 
-# How to Run
+---
 
-## Classification
-## In `dataload_cf100.py`, modify the dataset path to your own.
-## Files named `train_XXX_YYY.py` are for training from scratch, where `XXX` is the model type and `YYY` is the dataset.
-## Files starting with `dis_` are for knowledge distillation. Before running them, first modify the paths for loading the `.pth` files.
+## Environment
 
-## Object Detection
-## In the `detect` folder, run the scripts whose names start with `train`.
+Our experiments were conducted with the following software stack:
 
-## Segmentation
-## In the `segment` folder, run the scripts whose names start with `train`.
+- Python 3.9  
+- PyTorch 1.9.0 (CUDA 11.3, cuDNN 8.0)  
+- NumPy 1.21.0  
+- OpenCV-Python 4.1.2.30  
+- Matplotlib 3.4.3  
 
-## Pretrained Weights
-## Teacher: `deeplabv3_resnet101.pth`  ||  Student: `deeplabv3_resnet18.pth`  ||  Best model: `btkd_deeplabv3_resnet18.pth`
-## Teacher: `mit_B4.pth`               ||  Student: `mit_B0.pth`               ||  Best model: `btkd_mit_B0.pth`
+These are standard dependencies and can be installed via `pip` or `conda`.
 
-# Notes
-## Due to limited time and resources, the codebase will be updated gradually in the future.
+Additional task-specific dependencies:
 
+- For YOLO-based detection models: `ultralytics`
+- For MiT-based segmentation models: `timm`
+
+The codebase supports both **Ubuntu** and **Windows**; the only difference is the style of file paths.
+
+### Pretrained Weights & Checkpoints
+
+- **Classification**:  
+  Download the pretrained classification weights and place them in the root directory under `./pth/`.
+
+- **Segmentation**:  
+  Download the segmentation pretrained weights and trained checkpoints and place them in `./segment/pth/`.
+
+All experiments were run on **2 × RTX 4090 GPUs**.
+
+---
+
+## Usage
+
+### 1. Classification
+
+1. In `dataload_cf100.py`, update the dataset path to your own data directory.
+2. Scripts named `train_XXX_YYY.py` perform *from-scratch* training, where:
+   - `XXX` denotes the model/backbone (e.g., ResNet, ViT, etc.),
+   - `YYY` denotes the dataset (e.g., CIFAR10, CIFAR100).
+3. Scripts whose filenames start with `dis_` implement BTKD-based knowledge distillation.  
+   Before running them, configure the paths for loading the corresponding `.pth` teacher/student weights.
+
+---
+
+### 2. Object Detection
+
+For object detection, navigate to the `detect` directory and run the scripts whose names start with `train_`.  
+These scripts train detection models (e.g., YOLO) under the BTKD framework.
+
+---
+
+### 3. Semantic Segmentation
+
+For semantic segmentation, navigate to the `segment` directory and run the scripts whose names start with `train_`.
+
+The default teacher–student settings and best checkpoints are:
+
+- Teacher: `deeplabv3_resnet101.pth`  
+  Student: `deeplabv3_resnet18.pth`  
+  Best checkpoint: `btkd_deeplabv3_resnet18.pth`
+
+- Teacher: `mit_B4.pth`  
+  Student: `mit_B0.pth`  
+  Best checkpoint: `btkd_mit_B0.pth`
+
+All of the above should be placed under `./segment/pth/`.
+
+---
+
+## Notes
+
+Due to limited time and resources, this repository is still evolving.  
+More polished code, additional experiments, and extra pretrained models will be released progressively.
 
 
 # To Be Continue...
