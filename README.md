@@ -45,7 +45,7 @@ All experiments were run on **2 × RTX 4090 GPUs**.
    - `YYY` denotes the dataset (e.g., CIFAR10, CIFAR100).
 3. Scripts whose filenames start with `dis_` implement BTKD-based knowledge distillation.
    
-   The default teacher–student settings and best checkpoints are:
+   The best checkpoints are:
    
    - Teacher: [h_resnet50_cf10.pth](https://drive.google.com/file/d/1Z1D65CAkQZSwZv0zrhk5JypnfC84hjm9/view?usp=drive_link)
 
