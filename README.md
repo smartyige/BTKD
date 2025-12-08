@@ -47,13 +47,9 @@ All experiments were run on **2 × RTX 4090 GPUs**.
    
    The default teacher–student settings and best checkpoints are:
    
-   - Teacher: `deeplabv3_resnet101.pth`  
-   - Student: `deeplabv3_resnet18.pth`  
-   - Best checkpoint: `btkd_deeplabv3_resnet18.pth`
+   - Teacher: [h_resnet50_cf10.pth] (https://drive.google.com/file/d/1Z1D65CAkQZSwZv0zrhk5JypnfC84hjm9/view?usp=drive_link)
 
-   - Teacher: `mit_B4.pth`  
-   - Student: `mit_B0.pth`  
-   - Best checkpoint: `btkd_mit_B0.pth`
+   - Teacher: [h_resnet50_cf100.pth] (https://drive.google.com/file/d/1C5eYZYx_yRb-XWeSeva3vktp_pfFrLFM/view?usp=drive_link)
 
 ---
 
