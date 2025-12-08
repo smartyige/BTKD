@@ -70,9 +70,9 @@ The default teacher–student settings and best checkpoints are:
   Student: [deeplabv3_resnet18.pth]()  
   Best checkpoint: [btkd_deeplabv3_resnet18.pth]()
 
-- Teacher: `mit_B4.pth`  
-  Student: `mit_B0.pth`  
-  Best checkpoint: `btkd_mit_B0.pth`
+- Teacher: [mit_B4.pth]()  
+  Student: [mit_B0.pth]()  
+  Best checkpoint: [btkd_mit_B0.pth]()
 
 All of the above should be placed under `./segment/pth/`.
 
@@ -83,6 +83,7 @@ All of the above should be placed under `./segment/pth/`.
 Due to limited time and resources, this repository is still evolving.  
 More polished code, additional experiments, and extra pretrained models will be released progressively.
 
+---
 
 ## Citation
 
