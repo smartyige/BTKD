@@ -66,9 +66,9 @@ For semantic segmentation, navigate to the `segment` directory and run the scrip
 
 The default teacher–student settings and best checkpoints are:
 
-- Teacher: `deeplabv3_resnet101.pth`  
-  Student: `deeplabv3_resnet18.pth`  
-  Best checkpoint: `btkd_deeplabv3_resnet18.pth`
+- Teacher: [deeplabv3_resnet101.pth]()  
+  Student: [deeplabv3_resnet18.pth]()  
+  Best checkpoint: [btkd_deeplabv3_resnet18.pth]()
 
 - Teacher: `mit_B4.pth`  
   Student: `mit_B0.pth`  
