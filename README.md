@@ -43,8 +43,17 @@ All experiments were run on **2 × RTX 4090 GPUs**.
 2. Scripts named `train_XXX_YYY.py` perform *from-scratch* training, where:
    - `XXX` denotes the model/backbone (e.g., ResNet, ViT, etc.),
    - `YYY` denotes the dataset (e.g., CIFAR10, CIFAR100).
-3. Scripts whose filenames start with `dis_` implement BTKD-based knowledge distillation.  
-   Before running them, configure the paths for loading the corresponding `.pth` teacher/student weights.
+3. Scripts whose filenames start with `dis_` implement BTKD-based knowledge distillation.
+   
+   The default teacher–student settings and best checkpoints are:
+   
+   - Teacher: `deeplabv3_resnet101.pth`  
+   - Student: `deeplabv3_resnet18.pth`  
+   - Best checkpoint: `btkd_deeplabv3_resnet18.pth`
+
+   - Teacher: `mit_B4.pth`  
+   - Student: `mit_B0.pth`  
+   - Best checkpoint: `btkd_mit_B0.pth`
 
 ---
 
