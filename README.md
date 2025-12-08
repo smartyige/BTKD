@@ -1,26 +1,34 @@
 # BTKD
-# 环境：
-## 我们的环境是python==3.9, numpy==1.21.0, pytorch==1.9.0, cuda==11.3, cudnn==8.0,opencv-python==4.1.2.30, matplotlib==3.4.3,都是一些基本库。
-## 如要运行yolo模型，需要安装ultralytics库
-## 如要运行mit分割模型，需要安装timm相关库
-## Ubuntu和Windows系统都能运行，就是文件路径的写法不一样
-## 分类的预训练权重下载好放在主目录的pth文件夹中
-## 分割的预训练权重和训练好的权重下载好放在segment文件夹下的pth文件夹中
-## 我的显卡是RTX4090*2
-# 运行：
-## 分类
-## dataload_cf100.py文件里面改你的数据集的路径
-## train_XXX_YYY名字的是直接训练的代码，XXX是模型选择，YYY是数据集选择
-## dis_开头的是知识蒸馏的代码，运行时先修改读取pth文件的路径
-## 目标检测
-## 在detect文件夹中运行train开头的代码
-## 分割
-## 运行segment文件夹下的train开头的代码
-## 预训练权重：
-## 教师：deeplabv3_resnet101.pth  ||   学生：deeplabv3_resnet18.pth  ||  best_model：btkd_deeplabv3_resnet18.pth
-## 教师：mit_B4.pth  ||   学生：mit_B0.pth  ||  best_model：btkd_mit_B0.pth
-# 补充：
-## 能力和精力都有限，后续会慢慢更新代码
+
+# Environment
+## Our environment is: python==3.9, numpy==1.21.0, pytorch==1.9.0, cuda==11.3, cudnn==8.0, opencv-python==4.1.2.30, matplotlib==3.4.3. These are all basic libraries.
+## To run the YOLO models, you need to install the `ultralytics` library.
+## To run the MiT segmentation models, you need to install the `timm` library.
+## Both Ubuntu and Windows are supported; only the file path formats are different.
+## Download the classification pretrained weights and place them in the `pth` folder under the project root directory.
+## Download the segmentation pretrained weights and trained weights, and place them in the `segment/pth` folder.
+## My GPU setup is 2 × RTX 4090.
+
+# How to Run
+
+## Classification
+## In `dataload_cf100.py`, modify the dataset path to your own.
+## Files named `train_XXX_YYY.py` are for training from scratch, where `XXX` is the model type and `YYY` is the dataset.
+## Files starting with `dis_` are for knowledge distillation. Before running them, first modify the paths for loading the `.pth` files.
+
+## Object Detection
+## In the `detect` folder, run the scripts whose names start with `train`.
+
+## Segmentation
+## In the `segment` folder, run the scripts whose names start with `train`.
+
+## Pretrained Weights
+## Teacher: `deeplabv3_resnet101.pth`  ||  Student: `deeplabv3_resnet18.pth`  ||  Best model: `btkd_deeplabv3_resnet18.pth`
+## Teacher: `mit_B4.pth`               ||  Student: `mit_B0.pth`               ||  Best model: `btkd_mit_B0.pth`
+
+# Notes
+## Due to limited time and resources, the codebase will be updated gradually in the future.
+
 
 
 # To Be Continue...
