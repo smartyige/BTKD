@@ -84,4 +84,18 @@ Due to limited time and resources, this repository is still evolving.
 More polished code, additional experiments, and extra pretrained models will be released progressively.
 
 
-# To Be Continue...
+## Citation
+
+If you find this repository helpful in your research, please consider citing our paper:
+
+```bibtex
+@inproceedings{zhang2025can,
+  title={Can students beyond the teacher? distilling knowledge from teacher’s bias},
+  author={Zhang, Jianhua and Gao, Yi and Liu, Ruyu and Cheng, Xu and Zhang, Houxiang and Chen, Shengyong},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={39},
+  number={21},
+  pages={22434--22442},
+  year={2025}
+}
+
